@@ -4,8 +4,8 @@ var player1Turn;
 
 const player1ScoreBox = document.getElementById("player-1-score");
 const player2ScoreBox = document.getElementById("player-2-score");
-const player1ScoreUpdate = document.getElementById("player-1-score-upadate");
-const player2ScoreUpdate = document.getElementById("player-2-score-upadate");
+const player1ScoreUpdate = document.getElementById("player-1-score-update");
+const player2ScoreUpdate = document.getElementById("player-2-score-update");
 const messageText = document.getElementById("message");
 const rollBtn1 = document.getElementById("roll-btn-1");
 const rollBtn2 = document.getElementById("roll-btn-2");
@@ -19,19 +19,18 @@ rollBtn2.addEventListener("click", player2Turn);
 
 function setPlayer() {
   let randomPlayer = Math.floor(Math.random() * 2) + 1;
-  console.log(randomPlayer);
   if (randomPlayer == 1) {
     disable2();
     rollBtn2.classList.remove("active");
     rollBtn1.classList.add("active");
-    messageText.textContent = "Player-1 To Play";
+    messageText.textContent = "Player-1 Turn";
     scoreBox1.classList.add("active");
     scoreBox2.classList.remove("active");
   } else {
     disable1();
     rollBtn1.classList.remove("active");
     rollBtn2.classList.add("active");
-    messageText.textContent = "Player-2 To Play";
+    messageText.textContent = "Player-2 Turn";
     scoreBox2.classList.add("active");
     scoreBox1.classList.remove("active");
   }
@@ -62,6 +61,10 @@ function disable2() {
 function resetGame() {
   rollBtn1.style.display = "none";
   rollBtn2.style.display = "none";
+  if (player1Score || player2Score >= 30) {
+    scoreBox1.classList.remove("active");
+    scoreBox2.classList.remove("active");
+  }
   resetBtn.style.display = "block";
 }
 
@@ -78,7 +81,7 @@ function startGame() {
     scoreBox2.classList.add("active");
     rollBtn1.classList.remove("active");
     rollBtn2.classList.add("active");
-    messageText.textContent = "Player-2 to Play";
+    messageText.textContent = "Player-2 Turn";
   } else {
     player2Score += randomNumber;
     player2ScoreUpdate.textContent = player2Score;
@@ -89,17 +92,21 @@ function startGame() {
     rollBtn1.classList.add("active");
     disable2();
     rollDice(randomNumber);
-    messageText.textContent = "Player-1 to Play";
+    messageText.textContent = "Player-1 Turn";
   }
   if (player1Score >= 30) {
-    messageText.textContent = "Player 1 Wins";
+    messageText.textContent = "PLAYER1 WINS";
+    messageText.style.fontSize('larger')
     resetGame();
   } else if (player2Score >= 30) {
-    messageText.textContent = "Player 2 Wins";
+    messageText.textContent = "PLAYER2 WINS";
     resetGame();
   }
+
   player1Turn = !player1Turn;
 }
+
+
 
 function startAgain() {
   player1Score = 0;
@@ -114,4 +121,5 @@ function startAgain() {
   rollBtn1.style.display = "block";
   rollBtn2.style.display = "block";
   resetBtn.style.display = "none";
+ 
 }

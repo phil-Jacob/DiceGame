@@ -10,14 +10,15 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: darkslategray;
+    background-color: #2E2E2E
+    ;
 }
 
 .dice-game-box{
     max-width: 700px;
     min-height: 600px;
     width: 90%;
-    background-color: rgb(17, 199, 199);
+    background-color: #03A9F4;
     box-shadow: 1px 2px 5px black;
     display: flex;
     justify-content: center;
@@ -32,18 +33,16 @@ body{
 }
 
 h1{
-    font-size: medium;
+    font-size: large;
     padding: 0.8em;
     text-align: center;
-    color: rgb(18, 113, 18);
+    color: #FFFFFF;
     
 } 
 
 h2{
     text-align: center;
 }
-
-
 
 .score-main-box{
     display: flex;
@@ -73,15 +72,17 @@ h2{
 .hidden{
  visibility: hidden; 
 }
+
 .score-box{
     width: 200px;
     height: 200px;
     background-color: mintcream;
-    border-radius: 10%;
+    border-radius: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3.5rem;
+    transition: 1s;
 }
 
 .score-box-container{
@@ -92,8 +93,9 @@ h2{
 }
 
 .active{
-    box-shadow: 1px 2px 6px rgb(47, 0, 79);
+    box-shadow: 5px 5px 8px black;
 }
+
 
 .btn{
     display: inline;
@@ -103,16 +105,18 @@ h2{
     font-size: 1rem;
     border: none;
     border-radius: 2px;
-    background-color: green;
-    color: whitesmoke;
+    background-color: #FF6F61  ;
+    color: #FFFFFF;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 1s;
 
 }
 
 .btn:hover{
-    background-color: rgb(133, 64, 197)
+    background-color: #2F4F4F;
 }
+
+
 .restart-btn{
     display: none;
     margin: 2rem auto;
@@ -120,15 +124,17 @@ h2{
     width: 30%;
     font-size: 1.5625rem;
     border: none;
-    border-radius: 2px;
-    background-color: rgb(170, 209, 133);
+    border-radius: 30
+    px;
+    background-color: #FF6F00;
     color: black;
     cursor: pointer;
     transition: 0.5s;
+    box-shadow: 5px 5px 8px black;
     }
 
 .restart-btn:hover{
-    background-color: rgb(207, 53, 76);
+    background-color: #FFD700;
 }
 
 @media (max-width: 700px){

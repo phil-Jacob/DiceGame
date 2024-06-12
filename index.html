@@ -14,29 +14,29 @@
   <body onload="setPlayer()">
     <div class="dice-game-box">
       <div class="dice-game-container">
-        <h1>Let's Play Dice</h1>
-        <h2 id="message">Player-1 To Play</h2>
+        <h1>Let's Play Dice, First to reach 30 wins</h1>
+        <h2 id="message">Player-1 Turn</h2>
         <div class="score-main-box" id="score-main-box">
           <div class="score-box-container">
-            <h3 id="player-tag-1">player_1</h3>
+            <h3 id="player-tag-1">Player_1</h3>
             <div class="score-box active" id="score-box-1">
               <span id="player-1-score">0</span>
             </div>
-            <h3>Score: <span id="player-1-score-upadate">0</span></h3>
-            <button id="roll-btn-1" class="btn active">ROLL NOW</button>
+            <h3>Score: <span id="player-1-score-update">0</span></h3>
+            <button id="roll-btn-1" class="btn active">ROLL</button>
           </div>
           <img src="./assets/dice-1.png" class="dice hidden" />
           <div class="score-box-container">
-            <h3 id="player-tag-2">player_2</h3>
+            <h3 id="player-tag-2">Player_2</h3>
             <div class="score-box" id="score-box-2">
               <span id="player-2-score">0</span>
             </div>
-            <h3>Score: <span id="player-2-score-upadate">0</span></h3>
-            <button id="roll-btn-2" class="btn">ROLL NOW</button>
+            <h3>Score: <span id="player-2-score-update">0</span></h3>
+            <button id="roll-btn-2" class="btn">ROLL</button>
           </div>
         </div>
 
-        <button id="reset-btn" class="restart-btn">RESET</button>
+        <button id="reset-btn" class="restart-btn">DoubleClick to RESET</button>
       </div>
     </div>
     <script src="app.js"></script>
