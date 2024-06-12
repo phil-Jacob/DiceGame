@@ -96,7 +96,6 @@ function startGame() {
   }
   if (player1Score >= 30) {
     messageText.textContent = "PLAYER1 WINS";
-    messageText.style.fontSize('larger')
     resetGame();
   } else if (player2Score >= 30) {
     messageText.textContent = "PLAYER2 WINS";
